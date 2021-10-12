@@ -17,13 +17,13 @@ lmax = 3
 lattice = 3.0
 
 [Kpoints]
-mesh_size = 23  23  23
+mesh_size = 26  26  26
 
 [Atomic]
 
 [Contour]
 e_fermi = 0.0
 type = circular
-nz_sections = 26
+nz_sections = 28
 n_aux = 6
-depth = 1.0
+depth = 1.1
