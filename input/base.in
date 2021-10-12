@@ -7,7 +7,7 @@ energy_unit = Ry
 max_lin_iter = 9
 ef_tol = 1e-7
 etot_tol = 1e-6
-restart = force
+restart = soft
 spin_polarized = False
 
 [Structure]
@@ -24,6 +24,6 @@ mesh_size = 23  23  23
 [Contour]
 e_fermi = 0.0
 type = circular
-nz_sections = 24
+nz_sections = 26
 n_aux = 6
 depth = 1.0

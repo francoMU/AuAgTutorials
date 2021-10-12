@@ -23,7 +23,7 @@ experimental_volume = experimental_a ** 3 / 4
 
 structure = Structure(
     lattice=[[0.5, 0.5, 0.0], [0.0, 0.5, 0.5], [0.5, 0.0, 0.5]],
-    species=["Au"],
+    species=["Ag"],
     coords=[[0.0, 0.0, 0.0]],
 )
 
@@ -36,7 +36,7 @@ energies = []
 for volume in volumes:
     result = run(
         **PymatgenStructureAdapter(
-            structure, base_input_params, volume=volume, name=f"au-{volume:.6f}"
+            structure, base_input_params, volume=volume, name=f"ag-{volume:.6f}"
         )
     )
     energy = result["general"].total_free_energy_xc3
@@ -54,3 +54,6 @@ eos = EosFactory("birch_murnaghan", volumes, free_energies)
 volume_eq = eos.volume_eq
 
 print(volume_eq)
+print(np.cbrt(volume_eq * 4))
+print(eos.bulk_modulus_eq.to("GPa"))
+

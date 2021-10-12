@@ -1,14 +1,11 @@
 [Control]
-job_name = test-fcc
+job_name = "base"
 job_type = sc
 xc_type = lda
 length_unit = au
 energy_unit = Ry
-max_iter = 130
 max_lin_iter = 9
 ef_tol = 1e-7
-ef_mix = 0.6
-pot_mix = 0.6
 etot_tol = 1e-6
 restart = force
 spin_polarized = False
@@ -16,25 +13,17 @@ spin_polarized = False
 [Structure]
 name = fcc
 path = ./struct
-
-lattice =
-  0.5   0.5   0.0
-  0.0   0.5   0.5
-  0.5   0.0   0.5
-sites_frac =
-  0.0   0.0   0.0      ${site0}
-
 lmax = 3
-lattice_scale = 4.0 au
+lattice = 3.0
 
 [Kpoints]
-mesh_size = 23  23  23
+mesh_size = 25  25  25
 
 [Atomic]
 
 [Contour]
 e_fermi = 0.0
 type = circular
-nz_sections = 24
+nz_sections = 26
 n_aux = 6
-depth = 1.1
+depth = 1.0
